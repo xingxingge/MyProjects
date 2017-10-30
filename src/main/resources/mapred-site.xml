@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+</property>
+
+
+
+
+
+
+
+<property>
+    <description>To set the value of tmp directory for map and reduce tasks.</description>
+    <name>mapreduce.task.tmp.dir</name>
+    <value>/e/develop/bigdata/hadoop/tasks_tmp</value>
+</property>
+
+<property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>localhost:10020</value>
+</property>
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>0.0.0.0:19888</value>
+</property>
+<property>
+<name> mapreduce.jobhistory.intermediate-done-dir</name>
+<value>/user/job_history_intermediate_done_dir</value>
+</property>
+
+<property>
+<name>mapreduce.jobhistory.done-dir</name>
+<value>/user/job_history_done_dir</value>
+</property>
+
+
+
+</configuration>

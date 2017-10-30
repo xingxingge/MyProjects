@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+<name>fs.defaultFS</name>
+<value>hdfs://172.17.0.1:8020</value>
+</property>
+
+<property>
+<name>fs.checkpoint.perid</name>
+<value>36</value>
+</property>
+
+<property>
+<name>fs.checkpoint.size</name>
+<value>67108864</value>
+</property>
+
+
+<property>
+<name>fs.trash.interval</name>
+<value>180</value>
+</property>
+
+<!-- sequence file such as textfile  buffer-->
+<property>
+<name>io.file.buffer.size</name>
+<value>131072</value>
+</property>
+
+<property>
+<name>hadoop.native.lib</name>
+<value>true</value>
+</property>
+
+</configuration>

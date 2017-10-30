@@ -1,0 +1,13 @@
+#log4j.properties
+log4j.rootLogger=ERROR,A1,F
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d [%c %t] %-5p - %m%n\n
+# 时间 [类名 线程名] 级别 - 内容
+##每天输出到一个文件#
+log4j.appender.F=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.F.File=reentrantLockTest.log
+log4j.appender.F.Threshold = ERROR
+#F uses PatternLayout
+log4j.appender.F.layout=org.apache.log4j.PatternLayout
+log4j.appender.F.layout.ConversionPattern=%d [%c %t] %-5p - %m%n\n

@@ -1,0 +1,93 @@
+@startuml
+
+interface Iterable{
+Iterator iterator()
+}
+interface Collection
+
+interface Iterator{
+}
+
+abstract class AbstractCollection
+
+interface List{
+
+}
+interface ListIterator{
+}
+
+class Vector{
+}
+
+class Stack{
+
+}
+
+
+abstract class AbstractList
+
+
+
+
+Iterator <.. Collection
+Iterable <|- Collection
+Collection <|- List
+
+List <|.. AbstractList
+Iterator<|.. ListIterator
+Collection <|.. AbstractCollection
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+AbstractList <|-- AbstractSequentialList
+List <|.. LinkedList
+Deque <|.. LinkedList
+Queue <|-- Deque
+Collection <|-- Queue
+AbstractSequentialList <|--  LinkedList
+Collection <|- Set
+Set <|.. AbstractSet
+AbstractCollection <|- AbstractSet
+Vector <|-Stack
+AbstractList <|-Vector
+List <|..Vector
+Map <|-AbstractMap
+AbstractMap <|-HashMap
+Map <|..HashMap
+Map <|.. LinkedHashMap
+HashMap <|- LinkedHashMap
+
+
+
+
+interface Deque{
+
+}
+interface Queue{
+
+}
+
+class ArrayList {
+Object[] elementData
+size()
+}
+class LinkedList {
+Object[] elementData
+size()
+}
+
+abstract class AbstractSet{
+}
+abstract class AbstractSequentialList{
+}
+interface Set{
+}
+interface Map{
+}
+abstract class AbstractMap{
+}
+ class HashMap{
+}
+ class LinkedHashMap{
+}
+
+@enduml

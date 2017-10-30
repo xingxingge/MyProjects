@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/e/develop/bigdata/hadoop</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>${hadoop.tmp.dir}/dfs/name</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>${hadoop.tmp.dir}/dfs/data</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.numblocks</name>
+    <value>3</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.scan.period.hours</name>
+    <value>1</value>
+  </property>
+
+  <property>
+    <name>dfs.blocksize</name>
+    <value>67217728</value>
+  </property>
+
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.handler.count</name>
+    <value>100</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>0.0.0.0:50090</value>
+    <description>The secondary namenode http server address and port.</description>
+  </property>
+
+  <property>
+    <name>dfs.namenode.checkpoint.dir</name>
+    <value>file://${hadoop.tmp.dir}/dfs/namesecondary</value>
+    <description>The secondary namenode http server address and port.</description>
+  </property>
+  <!--secondarynamecode检查操作-->
+
+  <property>
+    <name>dfs.bytes-per-checksum</name>
+    <value>67217728</value>
+    <description>MetaStore Client socket timeout in seconds</description>
+  </property>
+
+
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+
+
+</configuration>

@@ -1,0 +1,76 @@
+package com.hx.base;
+
+import java.io.Console;
+
+public class TestConsole {
+	public static void main(String[] args) {
+		Console console = System.console(); // 获得Console实例对象
+		if (console != null) { // 判断是否有控制台的使用权
+			String user = new String(console.readLine("Enter username:")); // 读取整行字符
+			String pwd = new String(console.readPassword("Enter passowrd:")); // 读取密码,输入时不显示
+			console.printf("Username is: " + user + "\n"); // 显示用户名
+			console.printf("Password is: " + pwd + "\n"); // 显示密码
+		} else {
+			System.out.println("Console is unavailable."); // 提示无控制台使用权限
+		}
+	}
+}
+
+Windows IP 配置
+
+
+无线局域网适配器 本地连接* 12:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 
+
+以太网适配器 Bluetooth 网络连接:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 
+
+无线局域网适配器 wireless:
+
+   连接特定的 DNS 后缀 . . . . . . . : 
+   IPv6 地址 . . . . . . . . . . . . : 2001::2323
+   本地链接 IPv6 地址. . . . . . . . : fe80::985e:886c:4d5f:6660%13
+   IPv4 地址 . . . . . . . . . . . . : 192.168.2.103
+   子网掩码  . . . . . . . . . . . . : 255.255.255.0
+   默认网关. . . . . . . . . . . . . : 2001::1212
+                                       192.168.2.253
+
+以太网适配器 local:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 
+
+以太网适配器 VirtualBox Host-Only Network:
+
+   连接特定的 DNS 后缀 . . . . . . . : 
+   本地链接 IPv6 地址. . . . . . . . : fe80::50eb:5c51:aac9:e804%42
+   IPv4 地址 . . . . . . . . . . . . : 191.255.255.254
+   子网掩码  . . . . . . . . . . . . : 255.255.255.0
+   IPv4 地址 . . . . . . . . . . . . : 192.168.59.119
+   子网掩码  . . . . . . . . . . . . : 255.255.255.0
+   默认网关. . . . . . . . . . . . . : 
+
+隧道适配器 Teredo Tunneling Pseudo-Interface:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 
+
+隧道适配器 isatap.{A7212315-16BF-45E3-973E-1F8A25102BD5}:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 
+
+隧道适配器 6TO4 Adapter:
+
+   连接特定的 DNS 后缀 . . . . . . . : 
+   IPv6 地址 . . . . . . . . . . . . : 2002:bfff:fffe::bfff:fffe
+   默认网关. . . . . . . . . . . . . : 
+
+隧道适配器 isatap.{682D2D93-82BA-4103-A05B-D9388975B82B}:
+
+   媒体状态  . . . . . . . . . . . . : 媒体已断开
+   连接特定的 DNS 后缀 . . . . . . . : 

@@ -2,7 +2,6 @@ package com.hx.jvm.classLoad.classloader;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.test.Test;
 
 /**
  * Created by hx on 16-10-9.
@@ -20,7 +19,7 @@ public class ClassLoaderTest {
     System.out.println(obj instanceof ClassLoaderTest);
     Object obj2=myLoader.loadClass("com.hx.jvm.classLoad.classloader.Package").newInstance();
     Object obj3=myLoader.loadClass("java.lang.Package").newInstance();
-    Test t = new Test();
+//    Test t = new Test();
   }
 }
 class CustomClassLoader extends ClassLoader{

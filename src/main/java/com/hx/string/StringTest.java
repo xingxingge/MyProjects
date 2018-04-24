@@ -1,4 +1,4 @@
-package com.hx.String;
+package com.hx.string;
 
 
 import org.junit.Test;

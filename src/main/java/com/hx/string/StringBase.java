@@ -1,4 +1,4 @@
-package com.hx.String;
+package com.hx.string;
 
 public class StringBase {
 	public static void stringBase() {

@@ -11,11 +11,6 @@
   <properties>
     <!--<libOutputDirectory>/opt/TopInsight/node/TsmLib</libOutputDirectory>-->
     <libOutputDirectory>${project.build.directory}/lib</libOutputDirectory>
-    <cdh.version>2.6.0-cdh5.7.1</cdh.version>
-    <hbase.version>1.2.0-cdh5.7.1</hbase.version>
-    <hive.version>1.1.0-cdh5.7.1</hive.version>
-    <spark.version>1.6.0-cdh5.7.1</spark.version>
-    <scala.version>2.10</scala.version>
   </properties>
 
   <build>
@@ -126,26 +121,6 @@
   </build>
 
   <dependencies>
-    <dependency> <!-- Spark dependency -->
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-core_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-hive_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-mllib_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-yarn_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
 
     <dependency>
     <groupId>cglib</groupId>
@@ -187,40 +162,6 @@
       <groupId>com.topsec.tsm</groupId>
       <artifactId>topsec-tsmbase</artifactId>
       <version>1.4</version>
-    </dependency>
-
-    <!-- for hive -->
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-jdbc</artifactId>
-      <version>${hive.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-metastore</artifactId>
-      <version>${hive.version}</version>
-    </dependency>
-
-    <!-- for cdh -->
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-client</artifactId>
-      <version>${cdh.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-auth</artifactId>
-      <version>${cdh.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hbase</groupId>
-      <artifactId>hbase-client</artifactId>
-      <version>${hbase.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hbase</groupId>
-      <artifactId>hbase-server</artifactId>
-      <version>${hbase.version}</version>
     </dependency>
 
     <!--mq-->

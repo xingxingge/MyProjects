@@ -1,4 +1,4 @@
-package com.hx.socket.mul;
+package com.hx.net.socket.mul;
 
 /**
  * Created by hx on 18-4-22.

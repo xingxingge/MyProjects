@@ -12,28 +12,28 @@ import java.nio.channels.FileChannel;
  * Created by hx on 16-10-24.
  */
 public class NioTest {
+  static final String path="/f/JavaHome/code/MyProjects/MyProjects";
 
   @Test
   public void read() throws IOException {
-    FileInputStream fin = new FileInputStream("./src/main/java/com/hx/io/nio/NioTest.java");
+    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/nio/NioTest.java");
     FileChannel fc = fin.getChannel();
     ByteBuffer buffer = ByteBuffer.allocate(1024);
-    fc.read(buffer);
+    fc.read(buffer);//从缓冲区读
     System.out.println(buffer.get(0));
     System.out.println(buffer.get(1));
+    System.out.println(buffer.get(2));
 
   }
 
   @Test
   public void write() throws IOException {
-    FileOutputStream fous = new FileOutputStream("./src/main/java/com/hx/io/nio/NioTest.java1");
+    FileOutputStream fous = new FileOutputStream(path+"/src/main/java/com/hx/nio/NioTest.java1");
     FileChannel fc = fous.getChannel();
     ByteBuffer buffer = ByteBuffer.allocate(1024);
     String messages = "你好";
     byte[] bytes = messages.getBytes();
-    for (int i = 0; i < bytes.length; i++) {
-      buffer.put(bytes[i]);
-    }
+    buffer.put(bytes);
     buffer.flip();
     fc.write(buffer);
 
@@ -42,13 +42,13 @@ public class NioTest {
   @Test
   public void copyFile() throws IOException {
 
-    FileInputStream fin = new FileInputStream("./src/main/java/com/hx/io/nio/NioTest.java");
+    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/nio/NioTest.java");
     FileChannel fcin = fin.getChannel();
 
-    FileOutputStream fout = new FileOutputStream("./src/main/java/com/hx/io/nio/NioTest.java1");
+    FileOutputStream fout = new FileOutputStream(path+"/src/main/java/com/hx/nio/NioTest.java1");
     FileChannel fcout = fout.getChannel();
 
-    ByteBuffer buffer = ByteBuffer.allocate(1024);
+    ByteBuffer buffer = ByteBuffer.allocate(8);
 
     while (true) {
       buffer.clear();

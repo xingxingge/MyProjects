@@ -2,8 +2,17 @@ package com.hx.activemq.topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
+import java.util.Date;
 import java.util.Scanner;
+
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.DeliveryMode;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+import javax.jms.TextMessage;
 
 public class TopicPublisher {
   public static void main(String[] args) throws JMSException {
@@ -12,9 +21,9 @@ public class TopicPublisher {
     connection.start();
 
     Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-    Topic topic = session.createTopic("myTopic.messages");
+    Destination destination = session.createTopic("myTopic.messages");
 
-    MessageProducer producer = session.createProducer(topic);
+    MessageProducer producer = session.createProducer(null);//topic上建立producer
     producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
     while(true) {
@@ -24,7 +33,8 @@ public class TopicPublisher {
       String line = sc.nextLine();
 
       TextMessage message = session.createTextMessage(line);
-      producer.send(message);
+      producer.send(destination,message);
+      System.out.println(new Date());
 //      session.commit();
 
       try {

@@ -7,9 +7,7 @@
   <name>MyProjects</name>
   <description>This is hx's Java Stand Edition</description>
 
-
   <properties>
-    <!--<libOutputDirectory>/opt/TopInsight/node/TsmLib</libOutputDirectory>-->
     <libOutputDirectory>${project.build.directory}/lib</libOutputDirectory>
   </properties>
 
@@ -60,12 +58,6 @@
       <version>3.1</version>
     </dependency>
 
-
-    <!--<dependency>-->
-      <!--<groupId>com.topsec.tsm</groupId>-->
-      <!--<artifactId>datastructure</artifactId>-->
-      <!--<version>1.1-SNAPSHOT</version>-->
-    <!--</dependency>-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -81,11 +73,6 @@
     <groupId>dom4j</groupId>
     <artifactId>dom4j</artifactId>
       <version>1.6.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.topsec.tsm</groupId>
-      <artifactId>topsec-tsmbase</artifactId>
-      <version>1.4</version>
     </dependency>
 
     <!--mq-->

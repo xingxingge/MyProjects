@@ -1,0 +1,11 @@
+/*.iml
+/.classpath
+/.idea
+/.project
+/.settings
+/release.properties
+/target
+
+# These are needed if running in IDE without properties set
+derby.log
+/bin/

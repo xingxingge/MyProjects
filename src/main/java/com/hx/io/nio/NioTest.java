@@ -16,7 +16,7 @@ public class NioTest {
 
   @Test
   public void read() throws IOException {
-    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/nio/NioTest.java");
+    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/io/nio/NioTest.java");
     FileChannel fc = fin.getChannel();
     ByteBuffer buffer = ByteBuffer.allocate(1024);
     fc.read(buffer);//从缓冲区读
@@ -28,7 +28,7 @@ public class NioTest {
 
   @Test
   public void write() throws IOException {
-    FileOutputStream fous = new FileOutputStream(path+"/src/main/java/com/hx/nio/NioTest.java1");
+    FileOutputStream fous = new FileOutputStream(path+"/src/main/java/com/hx/io/nio/NioTest.java1");
     FileChannel fc = fous.getChannel();
     ByteBuffer buffer = ByteBuffer.allocate(1024);
     String messages = "你好";
@@ -42,10 +42,10 @@ public class NioTest {
   @Test
   public void copyFile() throws IOException {
 
-    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/nio/NioTest.java");
+    FileInputStream fin = new FileInputStream(path+"/src/main/java/com/hx/io/nio/NioTest.java");
     FileChannel fcin = fin.getChannel();
 
-    FileOutputStream fout = new FileOutputStream(path+"/src/main/java/com/hx/nio/NioTest.java1");
+    FileOutputStream fout = new FileOutputStream(path+"/src/main/java/com/hx/io/nio/NioTest.java1");
     FileChannel fcout = fout.getChannel();
 
     ByteBuffer buffer = ByteBuffer.allocate(8);

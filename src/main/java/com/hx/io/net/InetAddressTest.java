@@ -1,4 +1,4 @@
-package com.hx.io.inet;
+package com.hx.io.net;
 
 import org.junit.Test;
 

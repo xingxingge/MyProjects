@@ -1,11 +1,13 @@
-package com.hx.io.nio.ibm;// $Id$
+package com.hx.nio.ibm;// $Id$
 
 import java.nio.ByteBuffer;
 
-public class CreateBuffer
+public class CreateArrayBuffer
 {
   static public void main( String args[] ) throws Exception {
-    ByteBuffer buffer = ByteBuffer.allocate( 1024 );
+    byte array[] = new byte[1024];
+
+    ByteBuffer buffer = ByteBuffer.wrap( array );
 
     buffer.put( (byte)'a' );
     buffer.put( (byte)'b' );

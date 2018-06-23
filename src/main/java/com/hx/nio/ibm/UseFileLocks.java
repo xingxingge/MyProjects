@@ -1,4 +1,4 @@
-package com.hx.io.nio.ibm;// $Id$
+package com.hx.nio.ibm;// $Id$
 
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;

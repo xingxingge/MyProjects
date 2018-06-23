@@ -1,4 +1,4 @@
-package com.hx.io.nio;
+package com.hx.nio;
 
 import java.nio.FloatBuffer;
 

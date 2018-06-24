@@ -1,9 +1,9 @@
 package com.hx.nio.ibm;// $Id$
 
-import java.io.*;
-import java.nio.*;
-import java.nio.channels.*;
-import java.nio.charset.*;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class UseCharsets
 {
@@ -21,17 +21,17 @@ public class UseCharsets
     MappedByteBuffer inputData =
       inc.map( FileChannel.MapMode.READ_ONLY, 0, inputLength );
 
-    Charset latin1 = Charset.forName( "ISO-8859-1" );
-    CharsetDecoder decoder = latin1.newDecoder();
-    CharsetEncoder encoder = latin1.newEncoder();
+//    Charset latin1 = Charset.forName( "UTF-8" );
+//    CharsetDecoder decoder = latin1.newDecoder();
+//    CharsetEncoder encoder = latin1.newEncoder();
+//
+//    CharBuffer cb = decoder.decode( inputData );
+//
+//    // Process char data here
+//
+//    ByteBuffer outputData = encoder.encode( cb );
 
-    CharBuffer cb = decoder.decode( inputData );
-
-    // Process char data here
-
-    ByteBuffer outputData = encoder.encode( cb );
-
-    outc.write( outputData );
+    outc.write( inputData );
 
     inf.close();
     outf.close();

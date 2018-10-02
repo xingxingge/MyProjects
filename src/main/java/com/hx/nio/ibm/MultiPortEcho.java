@@ -37,6 +37,7 @@ public class MultiPortEcho
 
     while (true) {
       int num = selector.select();
+      System.out.println("select: "+num);
 
       Set<SelectionKey> selectedKeys = selector.selectedKeys();
       Iterator<SelectionKey> it = selectedKeys.iterator();
@@ -53,7 +54,6 @@ public class MultiPortEcho
 
           // Add the new connection to the selector
           SelectionKey newKey = sc.register( selector, SelectionKey.OP_READ );//注册这个socket为read
-//          it.remove();
 
           System.out.println( "Got connection from "+sc );
         } else if ((key.readyOps() & SelectionKey.OP_READ)//读取数据
@@ -80,8 +80,8 @@ public class MultiPortEcho
 
           System.out.println( "Echoed "+bytesEchoed+" from "+sc );
 
-//          it.remove();
         }
+        it.remove();
 
       }
 

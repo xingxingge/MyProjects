@@ -25,31 +25,51 @@ public class EchoServer {
     serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
     while (true) {
       int num = selector.select();
+      System.out.println("select: " + num);
       Set<SelectionKey> selectionKeys = selector.selectedKeys();
       Iterator<SelectionKey> iterator = selectionKeys.iterator();
       while (iterator.hasNext()) {
         SelectionKey selectionKey = iterator.next();
-        iterator.remove();
         if (selectionKey.isAcceptable()) {
           ServerSocketChannel server = (ServerSocketChannel) selectionKey.channel();
           SocketChannel accept = server.accept();
           accept.configureBlocking(false);
           SelectionKey register = accept.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
           register.attach(ByteBuffer.allocate(1024));
+          System.out.println("accept");
         }
-        if (selectionKey.isReadable()) {
-          SocketChannel client = (SocketChannel) selectionKey.channel();
-          ByteBuffer byteBuffer = (ByteBuffer) selectionKey.attachment();
-//          byteBuffer.put("input>".getBytes());
-          client.read(byteBuffer);
-        }
+//        if (selectionKey.isReadable()) {
+//          SocketChannel client = (SocketChannel) selectionKey.channel();
+//          ByteBuffer byteBuffer = (ByteBuffer) selectionKey.attachment();
+////          byteBuffer.put("input>".getBytes());
+//          client.read(byteBuffer);
+//          System.out.println("readable");
+//        }
         if (selectionKey.isWritable()) {
           SocketChannel client = (SocketChannel) selectionKey.channel();
           ByteBuffer byteBuffer = (ByteBuffer) selectionKey.attachment();
-          byteBuffer.flip();
-          client.write(byteBuffer);
-          byteBuffer.compact();
+
+          while (true) {
+            byteBuffer.clear();
+
+            int r = client.read( byteBuffer );
+
+            if (r<=0) {
+              break;
+            }
+
+            byteBuffer.flip();
+
+            client.write( byteBuffer );
+          }
+
+
+//          byteBuffer.flip();
+//          client.write(byteBuffer);
+//          byteBuffer.compact();
+          System.out.println("writable");
         }
+        iterator.remove();
       }
     }
   }

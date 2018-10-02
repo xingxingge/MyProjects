@@ -105,7 +105,7 @@ public class SingleFileHTTPServer {
 //        contentType="text/html";
 //      }
 
-      InputStream in=new FileInputStream("/f/JavaHome/code/MyProjects/MyProjects/src/main/java/com/hx/net/socket/SingleFileHTTPServer.java");
+      InputStream in=new FileInputStream("/f/JavaHome/code/MyProjects/MyProjects/src/main/java/com/hx/io/net/socket/SingleFileHTTPServer.java");
       ByteArrayOutputStream out=new ByteArrayOutputStream();
       int b;
       while ((b=in.read())!=-1) {

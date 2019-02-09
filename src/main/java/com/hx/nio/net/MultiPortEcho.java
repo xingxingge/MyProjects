@@ -1,4 +1,4 @@
-package com.hx.nio.ibm;// $Id$
+package com.hx.nio.net;// $Id$
 
 import java.io.*;
 import java.net.*;
@@ -6,7 +6,8 @@ import java.nio.*;
 import java.nio.channels.*;
 import java.util.*;
 
-public class MultiPortEcho
+public class
+MultiPortEcho
 {
   private int ports[];
   private ByteBuffer echoBuffer = ByteBuffer.allocate( 1024 );
@@ -37,7 +38,7 @@ public class MultiPortEcho
 
     while (true) {
       int num = selector.select();
-      System.out.println("select: "+num);
+//      System.out.println("select: "+num);
 
       Set<SelectionKey> selectedKeys = selector.selectedKeys();
       Iterator<SelectionKey> it = selectedKeys.iterator();
@@ -77,7 +78,6 @@ public class MultiPortEcho
             sc.write( echoBuffer );
             bytesEchoed += r;
           }
-
           System.out.println( "Echoed "+bytesEchoed+" from "+sc );
 
         }

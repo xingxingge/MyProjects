@@ -23,7 +23,6 @@ public class FutureTest {
     try {
       System.out.println("获取future结果：");
       System.out.println(future.get()); // use future
-      System.out.println("result");
     } catch (InterruptedException e) {
       e.printStackTrace();
     } catch (ExecutionException e) {

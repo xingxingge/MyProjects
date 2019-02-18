@@ -9,10 +9,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Test2ReentrantLock {
   private static Integer count = 0;
-  private final Integer FULL = 10;
+  private final Integer max = 10;
   final Lock lock = new ReentrantLock();
-  final Condition NotFull = lock.newCondition();
-  final Condition NotEmpty = lock.newCondition();
+  final Condition notFull = lock.newCondition();
+  final Condition notEmpty = lock.newCondition();
 
   class Producer implements Runnable {
     @Override
@@ -25,17 +25,17 @@ public class Test2ReentrantLock {
         }
         lock.lock();
         try {
-          while (count == FULL) {
+          while (count == max) {
             try {
-              NotFull.await();//full,释放锁,需要等待,等待唤醒
+              notFull.await();//full,释放锁,需要等待,等待唤醒
             } catch (InterruptedException e) {
               e.printStackTrace();
             }
           }
           count++;
-          System.out.println(Thread.currentThread().getName()
+          System.out.println("produce-"+Thread.currentThread().getName()
                   + "生产者生产，目前总共有" + count);
-          NotEmpty.signal();//唤醒消费
+          notEmpty.signal();//唤醒消费
         } finally {
           lock.unlock();
         }
@@ -58,15 +58,15 @@ public class Test2ReentrantLock {
         try {
           while (count == 0) {
             try {
-              NotEmpty.await();
+              notEmpty.await();
             } catch (Exception e) {
               e.printStackTrace();
             }
           }
           count--;
-          System.out.println(Thread.currentThread().getName()
+          System.out.println("consume-"+Thread.currentThread().getName()
                   + "消费者消费，目前总共有" + count);
-          NotFull.signal();
+          notFull.signal();
         } finally {
           lock.unlock();
         }
@@ -78,6 +78,12 @@ public class Test2ReentrantLock {
   }
 
   public static void main(String[] args) throws Exception {
+//    test2();
+//    test1();
+    test3();
+  }
+
+  private static void test1() {
     Test2ReentrantLock hosee = new Test2ReentrantLock();
     new Thread(hosee.new Producer()).start();
     new Thread(hosee.new Producer()).start();
@@ -85,7 +91,21 @@ public class Test2ReentrantLock {
     new Thread(hosee.new Producer()).start();
     new Thread(hosee.new Consumer()).start();
     new Thread(hosee.new Consumer()).start();
-
-//    new Thread(hosee.new Consumer()).start();
+  }
+  private static void test2() {
+    Test2ReentrantLock hosee = new Test2ReentrantLock();
+    new Thread(hosee.new Producer()).start();
+    new Thread(hosee.new Producer()).start();
+    new Thread(hosee.new Consumer()).start();
+    new Thread(hosee.new Consumer()).start();
+    new Thread(hosee.new Consumer()).start();
+    new Thread(hosee.new Consumer()).start();
+  }
+  private static void test3() {
+    Test2ReentrantLock hosee = new Test2ReentrantLock();
+    new Thread(hosee.new Consumer()).start();
+    new Thread(hosee.new Consumer()).start();
+    new Thread(hosee.new Producer()).start();
+    new Thread(hosee.new Producer()).start();
   }
 }

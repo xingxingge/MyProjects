@@ -1,4 +1,4 @@
-package com.hx.wrapperclass;
+package com.hx.base.wrapperclass;
 
 import org.omg.CORBA.IntHolder;
 

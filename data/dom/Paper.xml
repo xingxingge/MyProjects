@@ -1,0 +1,30 @@
+<Papers>
+    <Paper>
+        <Layer>
+            <Polygon front="true">
+                <point>
+                    <x>2</x>
+                    <y>1</y>
+                </point>
+                <point>
+                    <x>3</x>
+                    <y>1</y>
+                </point>
+            </Polygon>
+        </Layer>
+    </Paper>
+    <Paper>
+        <Layer>
+            <Polygon front="true">
+                <point>
+                    <x>4</x>
+                    <y>1</y>
+                </point>
+                <point>
+                    <x>5</x>
+                    <y>1</y>
+                </point>
+            </Polygon>
+        </Layer>
+    </Paper>
+</Papers>

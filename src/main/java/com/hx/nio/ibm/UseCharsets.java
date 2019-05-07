@@ -8,8 +8,8 @@ import java.nio.charset.*;
 public class UseCharsets
 {
   static public void main( String args[] ) throws Exception {
-    String inputFile = "samplein.txt";
-    String outputFile = "sampleout.txt";
+    String inputFile = "data/nio/samplein.txt";
+    String outputFile = "data/nio/sampleout.txt";
 
     RandomAccessFile inf = new RandomAccessFile( inputFile, "r" );
     RandomAccessFile outf = new RandomAccessFile( outputFile, "rw" );
@@ -20,18 +20,22 @@ public class UseCharsets
 
     MappedByteBuffer inputData =
       inc.map( FileChannel.MapMode.READ_ONLY, 0, inputLength );
-    System.out.println(inputData.get(200000));
+    System.out.println(inputData.get(1));
 
-    Charset latin1 = Charset.forName( "ISO-8859-1" );
-    CharsetDecoder decoder = latin1.newDecoder();
-    CharsetEncoder encoder = latin1.newEncoder();
+//    Charset latin1 = Charset.forName( "ISO-8859-1" );
+    Charset utf8 = Charset.forName("UTF-8");
+    CharsetDecoder decoder = utf8.newDecoder();
+    CharsetEncoder encoder = utf8.newEncoder();
 
 
+    //解码
     CharBuffer cb = decoder.decode( inputData );
 
     // Process char data here
 
+    //编码
     ByteBuffer outputData = encoder.encode( cb );
+//    outputData.flip();
     outc.write( outputData );
 
     inf.close();

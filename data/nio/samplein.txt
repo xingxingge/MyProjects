@@ -1,0 +1,17 @@
+<students>
+    <student>
+        <name>小明</name>
+        <age>18</age>
+        <grade>大一</grade>
+    </student>
+    <student>
+        <name>小白</name>
+        <age>19</age>
+        <grade>大二</grade>
+    </student>
+    <student>
+        <name>菜鸟</name>
+        <age>17</age>
+        <grade>大一</grade>
+    </student>
+</students>

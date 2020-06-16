@@ -6,6 +6,7 @@ package com.hx.disruptor;
 public class LongEvent {
   private long value;
 
+
   public long getValue() {
     return value;
   }

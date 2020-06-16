@@ -24,6 +24,7 @@ public class CountDownLatchTest implements Runnable {
       Thread.sleep(2000);
       System.out.println("complete:"+i);
       countDownLatch.countDown();
+      System.out.println("ok:"+i);
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -36,7 +37,7 @@ public class CountDownLatchTest implements Runnable {
 //      executorService.execute(t);
     }
     countDownLatch.await();
-    System.out.println("end");
+    System.out.println("end...");
     executorService.shutdown();
   }
 }

@@ -13,9 +13,9 @@ import java.util.Set;
 public class EchoClient_NIO {
   private Selector selector;
 
-  private ByteBuffer sendBuf = ByteBuffer.allocate(1024);
+  private ByteBuffer sendBuf = ByteBuffer.allocate(256);
 
-  private ByteBuffer revBuf = ByteBuffer.allocate(1024);
+  private ByteBuffer revBuf = ByteBuffer.allocate(256);
 
   public EchoClient_NIO() {
     try {
@@ -92,7 +92,7 @@ public class EchoClient_NIO {
       String message = scanner.nextLine();
       byte[] bytes = message.getBytes();
       int start = 0;
-      int length = 1024;
+      int length = 256;
       while (start < bytes.length) {
         sendBuf.clear();
         int len=length;

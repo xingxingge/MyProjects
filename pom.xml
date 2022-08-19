@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>MyProjects</groupId>
-  <artifactId>MyProjects</artifactId>
+  <groupId>dizoo</groupId>
+  <artifactId>dizoo-std</artifactId>
   <version>1.1-SNAPSHOT</version>
-  <name>MyProjects</name>
+  <name>dizoo-std</name>
   <description>This is hx's Java Stand Edition</description>
 
   <properties>
@@ -18,8 +18,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
       <plugin>
@@ -70,11 +70,11 @@
       <version>4.12</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.oracle.driver</groupId>
-      <artifactId>oracle-jdbc-driver</artifactId>
-      <version>11g</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.oracle.driver</groupId>-->
+<!--      <artifactId>oracle-jdbc-driver</artifactId>-->
+<!--      <version>11g</version>-->
+<!--    </dependency>-->
     <dependency>
     <groupId>dom4j</groupId>
     <artifactId>dom4j</artifactId>
@@ -112,6 +112,11 @@
       <groupId>quartz</groupId>
       <artifactId>quartz</artifactId>
       <version>1.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.30</version>
     </dependency>
   </dependencies>
 
